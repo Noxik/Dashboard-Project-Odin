@@ -1,6 +1,10 @@
 :root {
 --primary_text: 1.25rem;
-
+font-family: 'Quicksand', sans-serif;
+--navy: #364F6B;
+--teal: #3FC1C9;
+--white: #F5F5F5;
+--pink: #FC5185;
 }
 
 * {
@@ -10,17 +14,55 @@
 .container {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 3fr;
     height: 100vh;
+    grid-auto-flow: dense;
 }
 
 aside {
-    background-color: rgb(17, 120, 255);
+    background-color: var(--white);
     grid-area: 1/1/3/2;
 }
 
+aside img {
+    width: 2rem;
+    margin-right: 10px
+}
+
+aside ul {
+    margin: 15% 0;
+    font-size: 1.25rem;
+}
+
+ul {
+    padding-inline-start: 20%;
+}
+
+
+.headsidebar {
+    margin-top: 5%;
+    justify-content: center;
+}
+
+.headsidebar, .sections, .setup {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1.25rem;
+}
+
+
+.headsidebar, .sections li, .setup li {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
 header {
-    background-color: beige;
+    background-color: var(--teal);
     grid-area: 1/2/2/3;
     display: grid;
     grid-template-columns: 1fr 8fr repeat(2, 1fr) 2fr;
@@ -29,6 +71,7 @@ header {
     padding-top: 1rem;
     gap: 0 8px;
 }
+
 
 a:last-child {
     justify-self: flex-start;
@@ -41,8 +84,8 @@ a:first-of-type {
 
 .button_primary {
     padding: 16px 32px;
-    background-color: blue;
-    color: white;
+    background-color: var(--white);
+    color: var(--navy);
     border-radius: 1.5rem;
     text-align: center;
     justify-self: center;
@@ -60,9 +103,9 @@ header img {
 }
 
 .search {
-    height: 3rem;
+    height: 2.5rem;
     width: 90%;
-    background-color: blueviolet;
+    background-color: var(--navy);
     border-radius: 1.5rem;
 }
 
@@ -78,7 +121,21 @@ header img {
 
 .avatar_big {
     grid-column: span 2;
-    margin-left: 8%
+    margin-left: 8%;
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    margin-left: 2%;
+    font-weight: 600;
+    line-height: 2rem;
+}
+
+.big_text {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
 }
 
 #face_big {
@@ -94,7 +151,7 @@ header img {
 }
 
 main {
-background-color: azure;
-grid-area: 2/2/3/3;
+    background-color: var(--navy);
+    grid-area: 2/2/3/3;
 }
 
